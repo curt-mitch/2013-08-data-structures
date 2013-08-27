@@ -1,30 +1,29 @@
-var Queue = function(){
-  // Use an object with numeric keys to store values
-
-  // Implement the methods below
+//prototypal
+var Queue = function() {
+ // Use an object with numeric keys to store values
   var queue = Object.create(queueMethods);
-  queue.storage = {};
-  queue.first = 0;
-  queue.last = 0;
+    queue._storage = {};
+    queue._first = 0;
+    queue._last = 0;
 
   return queue;
 };
 
 var queueMethods = {
   enqueue : function(value){
-    this.storage[this.last] = value;
-    this.last++;
+    this._storage[this._last] = value;
+    this._last++;
   },
 
   dequeue : function(){
-    var result = this.first;
-    if(this.first < this.last){
-      this.first++;
+    var result = this._storage[this._first];
+    if(this._first < this._last){
+      this._first++;
     }
-    return this.storage[result];
+    return result;
   },
 
   size : function(){
-    return this.last - this.first;
+    return this._last - this._first;
   }
 };

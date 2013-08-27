@@ -1,27 +1,23 @@
-var Stack = function(){
+//prototypal
+var Stack = function() {
   // Use an object with numeric keys to store values
- // Hint: set an initial value here
-  // Implement the methods below
-  this.storage = {};
-  this.stackSize = 0;
+  this._storage = {};
+  this._size = 0;
+
 };
 
 Stack.prototype.push = function(value){
-  this.storage[this.stackSize] = value;
-  this.stackSize++;
+  this._storage[this._size] = value;
+  this._size++;
 };
 
 Stack.prototype.pop = function(){
-  var result;
-  if(this.stackSize){
-    this.stackSize--;
+  if(this._size){
+    this._size--;
   }
-  result = this.storage[this.stackSize];
-  return result;
+  return this._storage[this._size];
 };
 
 Stack.prototype.size = function(){
-  return this.stackSize;
+  return this._size;
 };
-
-var newStack = new Stack();

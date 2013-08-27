@@ -13,12 +13,10 @@ var makeStack = function(){
   };
 
   stack.pop = function(){
-    var result;
     if(size){
       size--;
     }
-    result = storage[size];
-    return result;
+    return storage[size];
   };
 
   stack.size = function(){
